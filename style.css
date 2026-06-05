@@ -1,170 +1,207 @@
-{\rtf1\ansi\ansicpg932\cocoartf2868
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    
+    body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: FCFCFC_1;
+    }
+    
+    /* ヘッダー */
+    header {
+    background-color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: E67E22_1; /* オレンジ */
+    }
+    
+    nav ul {
+    display: flex;
+    list-style: none;
+    }
+    
+    nav ul li {
+    margin-left: 1.5rem;
+    }
+    
+    nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    }
+    
+    /* トップ画像（ヒーロー） */
+    .hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    url('https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?auto=format&fit=crop&q=80&w=1200') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    }
+    /* ※urlの部分を実際のキッチンカーの写真画像パスに変更してください */
+    
+    .hero-h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    }
+    
+    /* メインコンテンツ */
+    .container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    }
+    
+    .section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    }
+    
+    .section-title::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background-color: E67E22_1;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+    
+    /* リスト系スタイル */
+    .news-list, .history-list {
+    list-style: none;
+    }
+    
+    .news-list li, .history-list li {
+    padding: 1rem 0;
+    border-bottom: 1px dashed #ddd;
+    }
+    
+    .date {
+    color: E67E22_1;
+    font-weight: bold;
+    margin-right: 1rem;
+    }
+    
+    /* 出店スケジュールカード */
+    .highlight {
+    background-color: FFF8F0_1;
+    padding: 2rem;
+    border-radius: 10px;
+    }
+    
+    .schedule-card {
+    text-align: center;
+    border: 2px solid E67E22_1;
+    padding: 1.5rem;
+    border-radius: 8px;
+    }
+    
+    .next-date {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    }
+    
+    /* SNS */
+    .sns-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    }
+    
+    .sns-link {
+    font-size: 2rem;
+    color: E67E22_1;
+    transition: transform 0.3s;
+    }
+    
+    .sns-link:hover {
+    transform: scale(1.2);
+    }
+    
+    footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.8rem;
+    }
+    
+    /* スマホ対応 */
+    @media (max-width: 600px) {
+    header {
+    flex-direction: column;
+    }
+    nav ul {
+    margin-top: 1rem;
+    }
+    .hero-h1 {
+    font-size: 1.8rem;
+    }
+    }
 
-\f0\fs24 \cf0 /* \uc0\u22522 \u26412 \u35373 \u23450  */\
-* \{\
-    margin: 0;\
-    padding: 0;\
-    box-sizing: border-box;\
-\}\
-\
-body \{\
-    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;\
-    color: #333;\
-    line-height: 1.6;\
-    background-color: #fcfcfc;\
-\}\
-\
-/* \uc0\u12504 \u12483 \u12480 \u12540  */\
-header \{\
-    background-color: #fff;\
-    padding: 1rem 2rem;\
-    display: flex;\
-    justify-content: space-between;\
-    align-items: center;\
-    position: sticky;\
-    top: 0;\
-    z-index: 100;\
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);\
-\}\
-\
-.logo \{\
-    font-weight: bold;\
-    font-size: 1.2rem;\
-    color: #e67e22; /* \uc0\u12458 \u12524 \u12531 \u12472  */\
-\}\
-\
-nav ul \{\
-    display: flex;\
-    list-style: none;\
-\}\
-\
-nav ul li \{\
-    margin-left: 1.5rem;\
-\}\
-\
-nav ul li a \{\
-    text-decoration: none;\
-    color: #333;\
-    font-size: 0.9rem;\
-\}\
-\
-/* \uc0\u12488 \u12483 \u12503 \u30011 \u20687 \u65288 \u12498 \u12540 \u12525 \u12540 \u65289  */\
-.hero \{\
-    height: 60vh;\
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), \
-                url('https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?auto=format&fit=crop&q=80&w=1200') center/cover no-repeat;\
-    display: flex;\
-    justify-content: center;\
-    align-items: center;\
-    text-align: center;\
-    color: #fff;\
-\}\
-/* \uc0\u8251 url\u12398 \u37096 \u20998 \u12434 \u23455 \u38555 \u12398 \u12461 \u12483 \u12481 \u12531 \u12459 \u12540 \u12398 \u20889 \u30495 \u30011 \u20687 \u12497 \u12473 \u12395 \u22793 \u26356 \u12375 \u12390 \u12367 \u12384 \u12373 \u12356  */\
-\
-.hero-h1 \{\
-    font-size: 2.5rem;\
-    margin-bottom: 1rem;\
-\}\
-\
-/* \uc0\u12513 \u12452 \u12531 \u12467 \u12531 \u12486 \u12531 \u12484  */\
-.container \{\
-    max-width: 800px;\
-    margin: 3rem auto;\
-    padding: 0 1.5rem;\
-\}\
-\
-.section-title \{\
-    text-align: center;\
-    margin-bottom: 2rem;\
-    position: relative;\
-    padding-bottom: 0.5rem;\
-\}\
-\
-.section-title::after \{\
-    content: '';\
-    width: 50px;\
-    height: 3px;\
-    background-color: #e67e22;\
-    position: absolute;\
-    bottom: 0;\
-    left: 50%;\
-    transform: translateX(-50%);\
-\}\
-\
-/* \uc0\u12522 \u12473 \u12488 \u31995 \u12473 \u12479 \u12452 \u12523  */\
-.news-list, .history-list \{\
-    list-style: none;\
-\}\
-\
-.news-list li, .history-list li \{\
-    padding: 1rem 0;\
-    border-bottom: 1px dashed #ddd;\
-\}\
-\
-.date \{\
-    color: #e67e22;\
-    font-weight: bold;\
-    margin-right: 1rem;\
-\}\
-\
-/* \uc0\u20986 \u24215 \u12473 \u12465 \u12472 \u12517 \u12540 \u12523 \u12459 \u12540 \u12489  */\
-.highlight \{\
-    background-color: #fff8f0;\
-    padding: 2rem;\
-    border-radius: 10px;\
-\}\
-\
-.schedule-card \{\
-    text-align: center;\
-    border: 2px solid #e67e22;\
-    padding: 1.5rem;\
-    border-radius: 8px;\
-\}\
-\
-.next-date \{\
-    font-size: 1.5rem;\
-    margin-bottom: 0.5rem;\
-\}\
-\
-/* SNS */\
-.sns-icons \{\
-    display: flex;\
-    justify-content: center;\
-    gap: 2rem;\
-\}\
-\
-.sns-link \{\
-    font-size: 2rem;\
-    color: #e67e22;\
-    transition: transform 0.3s;\
-\}\
-\
-.sns-link:hover \{\
-    transform: scale(1.2);\
-\}\
-\
-footer \{\
-    text-align: center;\
-    padding: 2rem;\
-    background-color: #333;\
-    color: #fff;\
-    font-size: 0.8rem;\
-\}\
-\
-/* \uc0\u12473 \u12510 \u12507 \u23550 \u24540  */\
-@media (max-width: 600px) \{\
-    header \{\
-        flex-direction: column;\
-    \}\
-    nav ul \{\
-        margin-top: 1rem;\
-    \}\
-    .hero-h1 \{\
-        font-size: 1.8rem;\
-    \}\
-\}}
+    /* --- スライドショーのスタイル --- */
+.hero {
+    position: relative;
+    overflow: hidden;
+    height: 60vh; /* 画面の高さに対する比率（お好みの高さに調整してください） */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* 画像を背面に配置 */
+  }
+  
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out; /* 1.5秒かけてふわっと切り替わる */
+  }
+  
+  /* activeクラスがついた画像だけを表示 */
+  .slide.active {
+    opacity: 1;
+  }
+  
+  /* 文字コンテンツを画像の上に重ねる */
+  .hero-content {
+    position: relative;
+    z-index: 2; /* 画像より前面に出す */
+    text-align: center;
+    color: #ffffff; /* 文字を白にして見やすく */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* 背景が明るくても文字が見えるように影をつける */
+  }
