@@ -1,25 +1,9 @@
-// MOGFUL: hero slideshow + automatic photo placeholders
-window.addEventListener('DOMContentLoaded', () => {
-  // Keep original hero slideshow. Skip animation when users prefer less motion.
-  const slides = [...document.querySelectorAll('.hero-slider .slide')];
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (slides.length > 1 && !reducedMotion) {
-    let current = 0;
-    window.setInterval(() => {
-      slides[current].classList.remove('active');
-      current = (current + 1) % slides.length;
-      slides[current].classList.add('active');
-    }, 4800);
-  }
-
-  // Until you upload each JPG, the matching card displays a styled placeholder.
-  // Once the image is available it automatically replaces that placeholder.
-  document.querySelectorAll('.product-photo img').forEach((img) => {
-    const frame = img.closest('.product-photo');
-    const markLoaded = () => frame.classList.add('has-image');
-    const markMissing = () => frame.classList.remove('has-image');
-    img.addEventListener('load', markLoaded);
-    img.addEventListener('error', markMissing);
-    if (img.complete && img.naturalWidth > 0) markLoaded();
-  });
+document.addEventListener('DOMContentLoaded',()=>{
+ const toggle=document.querySelector('.nav-toggle'),nav=document.querySelector('.site-nav');
+ toggle.addEventListener('click',()=>{const open=!nav.classList.contains('is-open');nav.classList.toggle('is-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'メニューを閉じる':'メニューを開く')});
+ nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','メニューを開く')}));
+ document.querySelectorAll('.cat-asset').forEach(img=>{if(img.complete&&!img.naturalWidth)img.classList.add('is-missing');img.addEventListener('error',()=>img.classList.add('is-missing'))});
+ document.querySelectorAll('.product-media').forEach(frame=>{const img=frame.querySelector(':scope > img');img.addEventListener('error',()=>frame.classList.add('has-error'));if(img.complete&&!img.naturalWidth)frame.classList.add('has-error')});
+ const slides=[...document.querySelectorAll('.hero-slider .slide')];let active=0;const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;if(slides.length>1&&!reduce){setInterval(()=>{slides[active].classList.remove('active');active=(active+1)%slides.length;slides[active].classList.add('active')},4800)}
+ const chips=[...document.querySelectorAll('.menu-chip')];const categories=[...document.querySelectorAll('.category')];if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{entries.filter(x=>x.isIntersecting).forEach(x=>{chips.forEach(c=>{const selected=c.hash==='#'+x.target.id;c.classList.toggle('active',selected);if(selected)c.setAttribute('aria-current','location');else c.removeAttribute('aria-current')})})},{rootMargin:'-20% 0px -70% 0px'});categories.forEach(c=>observer.observe(c))}
 });
