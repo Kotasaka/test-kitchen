@@ -164,21 +164,10 @@
   }
   
   /* リスト系スタイル */
-  .news-list, .history-tags {
+  .history-tags {
     list-style: none;
   }
-  
-  .news-list li {
-    padding: 1rem 0;
-    border-bottom: 1px dashed #ddd;
-  }
-  
-  .date {
-    color: #e67e22;
-    font-weight: bold;
-    margin-right: 1rem;
-  }
-  
+
   /* 出店歴（タグ表示） */
   .history-tags {
     display: flex;
