@@ -126,7 +126,13 @@
     word-break: keep-all;
     overflow-wrap: anywhere;
   }
-  
+
+  /* 中央揃えのヒーローの文は、行の長さをそろえて1語だけの行を作らない */
+  .hero-content h1,
+  .hero-content p {
+    text-wrap: balance;
+  }
+
   .hero-content h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
