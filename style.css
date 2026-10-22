@@ -251,9 +251,17 @@
   }
 
   /* 出店のご相談 */
+  .booking-text {
+    text-align: center;
+  }
+
   .booking-text p {
     margin-bottom: 1rem;
     line-height: 1.9;
+    /* <wbr> の位置でだけ改行し、中央揃えの各行の長さをそろえる */
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
   }
   
   .booking-link {
