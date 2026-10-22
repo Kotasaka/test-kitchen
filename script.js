@@ -14,8 +14,15 @@ window.addEventListener('DOMContentLoaded', () => {
         slides[currentSlide].classList.add('active');
     }
 
-    // 端末で「視差効果を減らす／動きを減らす」が有効なら、1枚目のまま止める
+    // 端末で「視差効果を減らす／動きを減らす」が有効なら、1枚目のまま止める（2枚目以降は読み込まない）
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    // 2枚目以降の画像は、最初の表示に必要なものを読み終えてから読み込む
+    window.addEventListener('load', () => {
+        slides.forEach((slide) => {
+            if (slide.dataset.bg) slide.style.backgroundImage = `url('${slide.dataset.bg}')`;
+        });
+    });
 
     // 4000ミリ秒（4秒）ごとに nextSlide 関数を実行
     setInterval(nextSlide, 4000);

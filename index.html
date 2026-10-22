@@ -36,8 +36,9 @@
   <section class="hero">
     <div class="hero-slider">
       <div class="slide active" style="background-image: url('images/hero1.jpg');"></div>
-      <div class="slide" style="background-image: url('images/hero2.jpg');"></div>
-      <div class="slide" style="background-image: url('images/hero3.jpg');"></div>
+      <!-- 2枚目以降は data-bg に置き、ページの読み込みが終わってから script.js が背景に入れる -->
+      <div class="slide" data-bg="images/hero2.jpg"></div>
+      <div class="slide" data-bg="images/hero3.jpg"></div>
     </div>
 
     <div class="hero-content">
