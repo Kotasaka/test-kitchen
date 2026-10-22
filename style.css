@@ -44,7 +44,25 @@
     color: #333;
     font-size: 0.9rem;
   }
-  
+
+  /* スマホ用メニューボタン（PCでは出さない） */
+  .nav-toggle {
+    display: none;
+  }
+
+  /* キーボード操作のときだけ、どこにいるかをオレンジの枠で見せる */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid #e67e22;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* ページ内リンクで飛んだとき、見出しが固定ヘッダーに隠れないように */
+  section[id] {
+    scroll-margin-top: 80px;
+  }
+
   /* --- スライドショー（ヒーローセクション）のスタイル --- */
   .hero {
     position: relative;
@@ -458,19 +476,82 @@
   
   /* スマホ対応 */
   @media (max-width: 600px) {
+    /* ヘッダーは1行（ロゴ＋メニューボタン）。ナビはボタンで開閉する */
     header {
-      flex-direction: column;
+      padding: 0.6rem 0.6rem 0.6rem 1.2rem;
     }
-    nav ul {
-      margin-top: 1rem;
-    }
-    nav ul {
-      flex-wrap: wrap;
+    .nav-toggle {
+      display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 0.5rem 1rem;
+      width: 44px;
+      height: 44px;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+    /* 三本線（開いているときは×） */
+    .nav-toggle-bar,
+    .nav-toggle-bar::before,
+    .nav-toggle-bar::after {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background-color: #333;
+      border-radius: 1px;
+      transition: transform 0.25s, background-color 0.25s;
+    }
+    .nav-toggle-bar {
+      position: relative;
+    }
+    .nav-toggle-bar::before,
+    .nav-toggle-bar::after {
+      content: '';
+      position: absolute;
+      left: 0;
+    }
+    .nav-toggle-bar::before {
+      top: -7px;
+    }
+    .nav-toggle-bar::after {
+      top: 7px;
+    }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bar {
+      background-color: transparent;
+    }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bar::before {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bar::after {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+    /* ナビはヘッダーの真下に開くパネル */
+    #site-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: #fff;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+    }
+    header.is-nav-open #site-nav {
+      display: block;
+    }
+    nav ul {
+      flex-direction: column;
+      padding: 0.4rem 0;
     }
     nav ul li {
       margin-left: 0;
+    }
+    nav ul li a {
+      display: block;
+      padding: 0.85rem 1.2rem;
+      font-size: 1rem;
+    }
+    nav ul li + li a {
+      border-top: 1px solid #f3eee8;
     }
     .hero-content h1 {
       font-size: 1.8rem;
@@ -499,9 +580,6 @@
     .menu-tab img {
       width: 56px;
       height: 56px;
-    }
-    .menu-category {
-      scroll-margin-top: 130px;
     }
     .menu-list {
       grid-template-columns: repeat(2, 1fr);
@@ -543,7 +621,10 @@
   @media (prefers-reduced-motion: reduce) {
     .insta-float,
     .insta-float-link,
-    .menu-tab img {
+    .menu-tab img,
+    .nav-toggle-bar,
+    .nav-toggle-bar::before,
+    .nav-toggle-bar::after {
       transition: none;
     }
   }

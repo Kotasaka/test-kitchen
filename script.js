@@ -14,8 +14,38 @@ window.addEventListener('DOMContentLoaded', () => {
         slides[currentSlide].classList.add('active');
     }
 
+    // 端末で「視差効果を減らす／動きを減らす」が有効なら、1枚目のまま止める
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     // 4000ミリ秒（4秒）ごとに nextSlide 関数を実行
     setInterval(nextSlide, 4000);
+});
+
+// スマホのメニューボタン：ナビの開閉
+window.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('header');
+    const toggle = document.querySelector('.nav-toggle');
+    if (!header || !toggle) return;
+
+    const setOpen = (open) => {
+        header.classList.toggle('is-nav-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+    };
+
+    toggle.addEventListener('click', () => setOpen(!header.classList.contains('is-nav-open')));
+
+    // リンクを押した、Escキー、メニューの外を押した、のどれかで閉じる
+    header.querySelectorAll('#site-nav a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && header.classList.contains('is-nav-open')) {
+            setOpen(false);
+            toggle.focus();
+        }
+    });
+    document.addEventListener('click', (e) => {
+        if (!header.contains(e.target)) setOpen(false);
+    });
 });
 
 // 次の出店リボン：開催中は「ただいま出店中」、終了後は Instagram への案内に切り替える
