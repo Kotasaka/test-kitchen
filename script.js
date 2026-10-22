@@ -1,9 +1,42 @@
-document.addEventListener('DOMContentLoaded',()=>{
- const toggle=document.querySelector('.nav-toggle'),nav=document.querySelector('.site-nav');
- toggle.addEventListener('click',()=>{const open=!nav.classList.contains('is-open');nav.classList.toggle('is-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'メニューを閉じる':'メニューを開く')});
- nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','メニューを開く')}));
- document.querySelectorAll('.cat-asset').forEach(img=>{if(img.complete&&!img.naturalWidth)img.classList.add('is-missing');img.addEventListener('error',()=>img.classList.add('is-missing'))});
- document.querySelectorAll('.product-media').forEach(frame=>{const img=frame.querySelector(':scope > img');img.addEventListener('error',()=>frame.classList.add('has-error'));if(img.complete&&!img.naturalWidth)frame.classList.add('has-error')});
- const slides=[...document.querySelectorAll('.hero-slider .slide')];let active=0;const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;if(slides.length>1&&!reduce){setInterval(()=>{slides[active].classList.remove('active');active=(active+1)%slides.length;slides[active].classList.add('active')},4800)}
- const chips=[...document.querySelectorAll('.menu-chip')];const categories=[...document.querySelectorAll('.category')];if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{entries.filter(x=>x.isIntersecting).forEach(x=>{chips.forEach(c=>{const selected=c.hash==='#'+x.target.id;c.classList.toggle('active',selected);if(selected)c.setAttribute('aria-current','location');else c.removeAttribute('aria-current')})})},{rootMargin:'-20% 0px -70% 0px'});categories.forEach(c=>observer.observe(c))}
+// 自動スライドショーの制御
+window.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.hero-slider .slide');
+    let currentSlide = 0;
+
+    function nextSlide() {
+        // 現在の表示されている画像から active クラスを消す
+        slides[currentSlide].classList.remove('active');
+
+        // 次の画像のインデックスを計算（3枚目の次は0枚目に戻る）
+        currentSlide = (currentSlide + 1) % slides.length;
+
+        // 次の画像に active クラスをつける（★ここを修正しました）
+        slides[currentSlide].classList.add('active');
+    }
+
+    // 4000ミリ秒（4秒）ごとに nextSlide 関数を実行
+    setInterval(nextSlide, 4000);
+});
+
+// 追従Instagramバナー
+window.addEventListener('DOMContentLoaded', () => {
+    const banner = document.querySelector('.insta-float');
+    const sns = document.getElementById('sns');
+    if (!banner || !sns) return;
+
+    // ×ボタンで閉じる（同じタブで見ている間は閉じたまま）
+    const close = banner.querySelector('.insta-float-close');
+    try {
+        if (sessionStorage.getItem('instaFloatClosed') === '1') banner.classList.add('is-closed');
+    } catch (e) { }
+    close.addEventListener('click', () => {
+        banner.classList.add('is-closed');
+        try { sessionStorage.setItem('instaFloatClosed', '1'); } catch (e) { }
+    });
+
+    if (!('IntersectionObserver' in window)) return;
+    // SNSセクションが画面に入ったら隠す（同じリンクが2つ並ばないように）
+    new IntersectionObserver((entries) => {
+        banner.classList.toggle('is-hidden', entries[0].isIntersecting);
+    }).observe(sns);
 });
