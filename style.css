@@ -197,24 +197,26 @@
     gap: 1.5rem;
     padding: 1.2rem 1.8rem;
     background-color: #fff;
+    border: 2px solid #e67e22;
     border-radius: 14px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
     color: #333;
     text-decoration: none;
     transition: box-shadow 0.3s;
   }
   
   .next-bar:hover {
-    box-shadow: 0 6px 20px rgba(230, 126, 34, 0.25);
+    box-shadow: 0 6px 20px rgba(230, 126, 34, 0.35);
   }
   
   .next-label {
     flex-shrink: 0;
-    padding-right: 1.5rem;
-    border-right: 1px solid #eee;
-    color: #e67e22;
+    padding: 0.3rem 0.9rem;
+    border-radius: 999px;
+    background-color: #e67e22;
+    color: #fff;
     font-weight: bold;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
   
   .next-info {
@@ -527,8 +529,8 @@
       gap: 1rem;
     }
     .next-label {
-      padding-right: 1rem;
-      font-size: 0.85rem;
+      padding: 0.25rem 0.7rem;
+      font-size: 0.8rem;
     }
     .next-info {
       flex-direction: column;
