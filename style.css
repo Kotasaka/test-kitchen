@@ -193,17 +193,11 @@
     /* 白文字とのコントラスト比 4.5:1 以上を確保するため、サイトのオレンジより少し濃い色 */
     background-color: #c75000;
     color: #fff;
-    text-decoration: none;
     clip-path: polygon(0 0, 100% 0, calc(100% - 22px) 50%, 100% 100%, 0 100%);
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
     scroll-margin-top: 60vh;
-    transition: padding-left 0.3s;
   }
-  
-  .next-ribbon:hover {
-    padding-left: calc(5vw + 8px);
-  }
-  
+
   .next-ribbon small {
     display: block;
     font-size: 0.75rem;
@@ -523,9 +517,6 @@
       bottom: 24px;
       padding: 0.6rem 2.2rem 0.6rem 1.1rem;
       clip-path: polygon(0 0, 100% 0, calc(100% - 14px) 50%, 100% 100%, 0 100%);
-    }
-    .next-ribbon:hover {
-      padding-left: 1.1rem;
     }
     .next-ribbon small {
       font-size: 0.7rem;
