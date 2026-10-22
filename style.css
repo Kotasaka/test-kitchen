@@ -238,6 +238,51 @@
     transform: translateX(4px);
   }
   
+  /* スマホ用：写真の左下に出すオレンジのリボン */
+  .next-ribbon {
+    display: none;
+  }
+  
+  @media (max-width: 600px) {
+    /* ナビの「出店情報」で飛べるよう、バーだけ隠して位置は残す */
+    .next-wrap {
+      height: 0;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      scroll-margin-top: 220px;
+    }
+    .next-ribbon {
+      position: absolute;
+      left: 0;
+      bottom: 24px;
+      z-index: 3;
+      display: block;
+      max-width: calc(100% - 1rem);
+      padding: 0.6rem 2.2rem 0.6rem 1.1rem;
+      background-color: #e67e22;
+      color: #fff;
+      text-decoration: none;
+      clip-path: polygon(0 0, 100% 0, calc(100% - 14px) 50%, 100% 100%, 0 100%);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .next-ribbon small {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      opacity: 0.9;
+    }
+    .next-ribbon-date {
+      display: block;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    .next-ribbon-place {
+      display: block;
+      font-size: 0.8rem;
+    }
+  }
+  
   /* 出店のご相談 */
   .booking-text p {
     margin-bottom: 1rem;
