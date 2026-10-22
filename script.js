@@ -34,6 +34,11 @@ window.addEventListener('DOMContentLoaded', () => {
         try { sessionStorage.setItem('instaFloatClosed', '1'); } catch (e) { }
     });
 
+    // 少しスクロールするまでは出さない
+    const update = () => banner.classList.toggle('is-waiting', window.scrollY < 200);
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+
     if (!('IntersectionObserver' in window)) return;
     // SNSセクションが画面に入ったら隠す（同じリンクが2つ並ばないように）
     new IntersectionObserver((entries) => {

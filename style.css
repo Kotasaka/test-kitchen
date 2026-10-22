@@ -439,6 +439,13 @@
     pointer-events: none;
   }
   
+  /* スクロールし始めるまでは隠す（下からふわっと出す） */
+  .insta-float.is-waiting {
+    opacity: 0;
+    transform: translateY(16px);
+    pointer-events: none;
+  }
+  
   footer {
     text-align: center;
     padding: 2rem 2rem 6rem;
