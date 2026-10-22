@@ -190,7 +190,8 @@
     display: block;
     max-width: calc(100% - 1rem);
     padding: 0.9rem 3.5rem 0.9rem 5vw;
-    background-color: #e67e22;
+    /* 白文字とのコントラスト比 4.5:1 以上を確保するため、サイトのオレンジより少し濃い色 */
+    background-color: #c75000;
     color: #fff;
     text-decoration: none;
     clip-path: polygon(0 0, 100% 0, calc(100% - 22px) 50%, 100% 100%, 0 100%);
@@ -206,21 +207,28 @@
   .next-ribbon small {
     display: block;
     font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    opacity: 0.9;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    color: #ffd9b3;
   }
-  
+
   .next-ribbon-date {
     display: block;
     font-size: 1.4rem;
     font-weight: bold;
+    letter-spacing: 0.02em;
   }
-  
+
   .next-ribbon-place {
     display: block;
     font-size: 0.9rem;
   }
-  
+
+  /* 場所と時間の区切り */
+  .next-ribbon-sep {
+    color: #ffb47a;
+  }
+
   /* 出店のご相談 */
   .booking-text p {
     margin-bottom: 1rem;
