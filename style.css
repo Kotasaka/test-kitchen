@@ -272,8 +272,10 @@
     transition: background-color 0.3s, color 0.3s;
   }
   
+  /* 白文字を載せる塗りは濃いオレンジ（#c75000）。線と文字は #e67e22 */
   .booking-button:hover {
-    background-color: #e67e22;
+    background-color: #c75000;
+    border-color: #c75000;
     color: #fff;
   }
   
@@ -306,7 +308,7 @@
     flex-shrink: 0;
     display: inline-block;
     padding: 0.9rem 2rem;
-    background-color: #e67e22;
+    background-color: #c75000; /* 白文字とのコントラスト比 4.5:1 以上 */
     color: #fff;
     font-weight: bold;
     text-decoration: none;
@@ -397,7 +399,7 @@
     z-index: 200;
     display: flex;
     align-items: center;
-    background-color: #e67e22;
+    background-color: #c75000; /* 白文字とのコントラスト比 4.5:1 以上 */
     border-radius: 999px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     transition: opacity 0.3s, transform 0.3s;
