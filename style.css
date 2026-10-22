@@ -95,8 +95,7 @@
   .hero-content h1,
   .hero-content p,
   .menu-item h4,
-  .schedule-card p,
-  .schedule-meta span {
+  .next-info span {
     word-break: keep-all;
     overflow-wrap: anywhere;
   }
@@ -182,68 +181,58 @@
     margin-top: -0.6rem;
   }
   
-  /* 出店スケジュールカード */
-  .highlight {
-    background-color: #fff8f0;
-    padding: 1.5rem 2rem;
-    border-radius: 10px;
+  /* 次の出店（ヒーロー写真の下に重ねる白いバー） */
+  .next-wrap {
+    position: relative;
+    z-index: 5;
+    max-width: 1080px;
+    margin: -2.2rem auto 0;
+    padding: 0 1.5rem;
+    scroll-margin-top: 100px;
   }
   
-  .schedule-card {
+  .next-bar {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 1.5rem;
+    padding: 1.2rem 1.8rem;
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    color: #333;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
   }
   
-  .schedule-date {
+  .next-bar:hover {
+    box-shadow: 0 6px 20px rgba(230, 126, 34, 0.25);
+  }
+  
+  .next-label {
     flex-shrink: 0;
     padding-right: 1.5rem;
-    border-right: 1px solid #f0d9c2;
-  }
-  
-  .schedule-label {
-    display: inline-block;
-    font-size: 0.7rem;
-    font-weight: bold;
-    color: #fff;
-    background-color: #e67e22;
-    border-radius: 999px;
-    padding: 0.15rem 0.7rem;
-    margin-bottom: 0.3rem;
-  }
-  
-  .schedule-range {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: bold;
+    border-right: 1px solid #eee;
     color: #e67e22;
-    line-height: 1.2;
-    white-space: nowrap;
+    font-weight: bold;
+    font-size: 0.95rem;
   }
   
-  .schedule-range small {
-    font-size: 0.7rem;
-    margin-left: 0.15rem;
-  }
-  
-  .schedule-name {
-    font-size: 1.15rem;
-    margin-bottom: 0.3rem;
-  }
-  
-  .schedule-meta {
+  .next-info {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.2rem 1.2rem;
-    font-size: 0.85rem;
-    color: #555;
+    gap: 0.2rem 1.5rem;
+    flex: 1;
+    font-size: 0.95rem;
   }
   
-  .schedule-meta b {
+  .next-arrow {
     color: #e67e22;
-    font-weight: normal;
-    margin-right: 0.4rem;
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+  }
+  
+  .next-bar:hover .next-arrow {
+    transform: translateX(4px);
   }
   
   /* 出店のご相談 */
@@ -526,25 +515,24 @@
     .menu-item h4 {
       font-size: 0.9rem;
     }
-    .highlight {
-      margin-left: 1rem;
-      margin-right: 1rem;
-      padding: 1.2rem 1.2rem;
-    }
     .history-tags li.history-break {
       display: none;
     }
-    .schedule-card {
+    .next-wrap {
+      margin-top: -1.5rem;
+      padding: 0 1rem;
+    }
+    .next-bar {
+      padding: 1rem 1.2rem;
+      gap: 1rem;
+    }
+    .next-label {
+      padding-right: 1rem;
+      font-size: 0.85rem;
+    }
+    .next-info {
       flex-direction: column;
-      align-items: flex-start;
-      gap: 0.6rem;
-    }
-    .schedule-date {
-      padding-right: 0;
-      border-right: none;
-    }
-    .schedule-range {
-      font-size: 1.3rem;
+      font-size: 0.85rem;
     }
     .insta-float {
       right: 14px;
