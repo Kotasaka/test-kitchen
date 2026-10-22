@@ -24,8 +24,17 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
   
+  /* 見出しだけ Zen Kaku Gothic New の Black。本文はシステム書体のまま */
+  .logo,
+  .hero-content h1,
+  .section-title,
+  .menu-category,
+  .sns-text h2 {
+    font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-weight: 900;
+  }
+
   .logo {
-    font-weight: bold;
     font-size: 1.2rem;
     color: #e67e22; /* オレンジ */
   }
@@ -340,13 +349,6 @@
     border: 3px solid #fff;
     box-shadow: 0 0 0 2px #f3d9c0;
     transition: box-shadow 0.3s, transform 0.3s;
-  }
-  
-  .menu-tab small {
-    display: block;
-    color: #e67e22;
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
   }
   
   .menu-tab:hover img {
