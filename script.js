@@ -18,6 +18,24 @@ window.addEventListener('DOMContentLoaded', () => {
     setInterval(nextSlide, 4000);
 });
 
+// 次の出店リボン：開催中は「ただいま出店中」、終了後は Instagram への案内に切り替える
+window.addEventListener('DOMContentLoaded', () => {
+    const ribbon = document.getElementById('schedule');
+    if (!ribbon || !ribbon.dataset.start || !ribbon.dataset.end) return;
+
+    // 見ている人の端末の日付（日本時間）を YYYY-MM-DD にする
+    const now = new Date();
+    const pad = (n) => String(n).padStart(2, '0');
+    const today = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+
+    if (today > ribbon.dataset.end) {
+        ribbon.querySelector('.next-ribbon-date').textContent = 'Instagram でお知らせします';
+        ribbon.querySelector('.next-ribbon-place').textContent = '@mogful_foodtruck';
+    } else if (today >= ribbon.dataset.start) {
+        ribbon.querySelector('small').textContent = 'ただいま出店中';
+    }
+});
+
 // 追従Instagramバナー
 window.addEventListener('DOMContentLoaded', () => {
     const banner = document.querySelector('.insta-float');
