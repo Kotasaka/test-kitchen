@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +8,12 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
-
   <header>
     <div class="logo">MOGFUL</div>
-    <nav>
+    <nav aria-label="メインナビゲーション">
       <ul>
+        <li><a href="#menu">メニュー</a></li>
         <li><a href="#news">お知らせ</a></li>
         <li><a href="#schedule">出店情報</a></li>
         <li><a href="#history">出店歴</a></li>
@@ -30,7 +28,6 @@
       <div class="slide" style="background-image: url('image2.jpg');"></div>
       <div class="slide" style="background-image: url('image3.jpg');"></div>
     </div>
-
     <div class="hero-content">
       <h1>出来立ての美味しさを、あなたの街へ。</h1>
       <p>こだわりの食材を使った自慢のメニューをお届けします。</p>
@@ -38,6 +35,69 @@
   </section>
 
   <main>
+    <!-- 追加：メニューセクション（商品名は仮表記です） -->
+    <section id="menu" class="container menu-section">
+      <h2 class="section-title">メニュー</h2>
+      <p class="menu-lead">MOGFULのフード＆ドリンク</p>
+
+      <div class="menu-grid">
+        <section class="menu-card" aria-labelledby="menu-penne">
+          <div class="menu-card-heading">
+            <h3 id="menu-penne">ペンネ</h3>
+            <span class="menu-count">5種類</span>
+          </div>
+          <ul class="menu-list">
+            <li>ペンネ 01</li>
+            <li>ペンネ 02</li>
+            <li>ペンネ 03</li>
+            <li>ペンネ 04</li>
+            <li>ペンネ 05</li>
+          </ul>
+        </section>
+
+        <section class="menu-card" aria-labelledby="menu-soup">
+          <div class="menu-card-heading">
+            <h3 id="menu-soup">スープ</h3>
+            <span class="menu-count">3種類</span>
+          </div>
+          <ul class="menu-list">
+            <li>スープ 01</li>
+            <li>スープ 02</li>
+            <li>スープ 03</li>
+          </ul>
+        </section>
+
+        <section class="menu-card" aria-labelledby="menu-potato">
+          <div class="menu-card-heading">
+            <h3 id="menu-potato">ポテト</h3>
+            <span class="menu-count">1種類</span>
+          </div>
+          <ul class="menu-list">
+            <li>フライドポテト</li>
+          </ul>
+        </section>
+
+        <section class="menu-card" aria-labelledby="menu-drinks">
+          <div class="menu-card-heading">
+            <h3 id="menu-drinks">ドリンク</h3>
+            <span class="menu-count">6種類</span>
+          </div>
+          <h4 class="menu-subheading">ソフトドリンク（4種類）</h4>
+          <ul class="menu-list">
+            <li>ドリンク 01</li>
+            <li>ドリンク 02</li>
+            <li>ドリンク 03</li>
+            <li>ドリンク 04</li>
+          </ul>
+          <h4 class="menu-subheading">アルコール（2種類）</h4>
+          <ul class="menu-list">
+            <li>アルコール 01</li>
+            <li>アルコール 02</li>
+          </ul>
+        </section>
+      </div>
+    </section>
+
     <section id="news" class="container">
       <h2 class="section-title">お知らせ</h2>
       <ul class="news-list">
@@ -72,8 +132,8 @@
       <h2 class="section-title">FOLLOW US</h2>
       <div class="sns-icons">
         <a href="https://www.instagram.com/mogful_foodtruck/" class="sns-link" target="_blank"
-          rel="noopener noreferrer">
-          <i class="fab fa-instagram"></i>
+          rel="noopener noreferrer" aria-label="MOGFULのInstagram">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
         </a>
       </div>
     </section>
@@ -82,9 +142,6 @@
   <footer>
     <p>&copy; 2026 MOGFUL. All Rights Reserved.</p>
   </footer>
-
   <script src="script.js"></script>
 </body>
-
 </html>
-
