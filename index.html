@@ -3,136 +3,395 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff9f4">
+  <meta name="description" content="キッチンカーMOGFUL（モグフル）のメニュー。ペンネ、スープ、ポテト、創作ドリンクなどをご紹介します。">
   <title>MOGFUL | キッチンカー</title>
   <link rel="icon" href="favicon.png" type="image/png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css?v=20261023-photo-menu">
 </head>
-<body>
-  <header>
-    <div class="logo">MOGFUL</div>
-    <nav aria-label="メインナビゲーション">
-      <ul>
-        <li><a href="#menu">メニュー</a></li>
-        <li><a href="#news">お知らせ</a></li>
-        <li><a href="#schedule">出店情報</a></li>
-        <li><a href="#history">出店歴</a></li>
-        <li><a href="#sns">SNS</a></li>
-      </ul>
-    </nav>
+<body id="top">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="#top" aria-label="MOGFUL トップへ">
+        <span class="logo-name">MOGFUL<span class="logo-dot">.</span></span>
+        <span class="logo-caption">FOOD TRUCK</span>
+      </a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <ul>
+          <li><a class="site-nav-menu" href="#menu">メニュー</a></li>
+          <li><a href="#news">お知らせ</a></li>
+          <li><a href="#schedule">出店情報</a></li>
+          <li><a href="#history">出店歴</a></li>
+          <li><a href="#sns">SNS</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-slider">
+  <section class="hero" aria-label="MOGFULのご紹介">
+    <div class="hero-slider" aria-hidden="true">
       <div class="slide active" style="background-image: url('image1.jpg');"></div>
       <div class="slide" style="background-image: url('image2.jpg');"></div>
       <div class="slide" style="background-image: url('image3.jpg');"></div>
     </div>
     <div class="hero-content">
-      <h1>出来立ての美味しさを、あなたの街へ。</h1>
-      <p>こだわりの食材を使った自慢のメニューをお届けします。</p>
+      <p class="hero-eyebrow">FOOD TRUCK / MOGFUL</p>
+      <h1>出来立ての美味しさを、<br class="hero-break">あなたの街へ。</h1>
+      <p class="hero-lead">こだわりの食材を使った自慢のメニューをお届けします。</p>
+      <a href="#menu" class="hero-button">メニューを見る <span aria-hidden="true">↗</span></a>
     </div>
+    <span class="hero-side" aria-hidden="true">GOOD FOOD, GOOD DAY.</span>
   </section>
 
   <main>
-    <!-- 追加：メニューセクション（商品名は仮表記です） -->
-    <section id="menu" class="container menu-section">
-      <h2 class="section-title">メニュー</h2>
-      <p class="menu-lead">MOGFULのフード＆ドリンク</p>
-
-      <div class="menu-grid">
-        <section class="menu-card" aria-labelledby="menu-penne">
-          <div class="menu-card-heading">
-            <h3 id="menu-penne">ペンネ</h3>
-            <span class="menu-count">5種類</span>
-          </div>
-          <ul class="menu-list">
-            <li>ペンネ 01</li>
-            <li>ペンネ 02</li>
-            <li>ペンネ 03</li>
-            <li>ペンネ 04</li>
-            <li>ペンネ 05</li>
-          </ul>
-        </section>
-
-        <section class="menu-card" aria-labelledby="menu-soup">
-          <div class="menu-card-heading">
-            <h3 id="menu-soup">スープ</h3>
-            <span class="menu-count">3種類</span>
-          </div>
-          <ul class="menu-list">
-            <li>スープ 01</li>
-            <li>スープ 02</li>
-            <li>スープ 03</li>
-          </ul>
-        </section>
-
-        <section class="menu-card" aria-labelledby="menu-potato">
-          <div class="menu-card-heading">
-            <h3 id="menu-potato">ポテト</h3>
-            <span class="menu-count">1種類</span>
-          </div>
-          <ul class="menu-list">
-            <li>フライドポテト</li>
-          </ul>
-        </section>
-
-        <section class="menu-card" aria-labelledby="menu-drinks">
-          <div class="menu-card-heading">
-            <h3 id="menu-drinks">ドリンク</h3>
-            <span class="menu-count">6種類</span>
-          </div>
-          <h4 class="menu-subheading">ソフトドリンク（4種類）</h4>
-          <ul class="menu-list">
-            <li>ドリンク 01</li>
-            <li>ドリンク 02</li>
-            <li>ドリンク 03</li>
-            <li>ドリンク 04</li>
-          </ul>
-          <h4 class="menu-subheading">アルコール（2種類）</h4>
-          <ul class="menu-list">
-            <li>アルコール 01</li>
-            <li>アルコール 02</li>
-          </ul>
-        </section>
+    <!-- メニュー：画像は images フォルダ内に JPG を配置します。画像がない間もプレースホルダーを表示します。 -->
+    <section id="menu" class="menu-section" aria-labelledby="menu-heading">
+      <div class="menu-intro">
+        <p class="section-kicker"><span class="kicker-dot" aria-hidden="true"></span> MADE TO MAKE YOU SMILE</p>
+        <h2 id="menu-heading"><span class="menu-title-en">OUR MENU</span><span class="menu-title-ja">メニュー</span></h2>
+        <p class="menu-lead">その日の気分にぴったりなひと皿を。<br class="desktop-break">MOGFULのフード＆ドリンクをお楽しみください。</p>
       </div>
+      <nav class="menu-jump" aria-label="メニューカテゴリー">
+          <a href="#penne">ペンネ</a>
+          <a href="#soup">スープ</a>
+          <a href="#potato">ポテト</a>
+          <a href="#drink">創作ドリンク</a>
+          <a href="#alcohol">創作ドリンク（アルコール）</a>
+      </nav>
+
+      <section id="penne" class="menu-category menu-category--penne" aria-labelledby="category-penne">
+        <div class="category-heading">
+          <span class="category-number" aria-hidden="true">01</span>
+          <div class="category-names">
+            <p class="category-en">PENNE</p>
+            <h3 id="category-penne">ペンネ</h3>
+          </div>
+          <span class="category-count">05 ITEMS</span>
+        </div>
+        <div class="product-grid">
+          <article class="product-card product-card--penne">
+            <div class="product-photo">
+              <div class="photo-fallback" aria-hidden="true">
+                <span class="placeholder-spark">✳</span>
+                <span class="placeholder-brand">MOGFUL</span>
+                <span class="placeholder-caption">PHOTO COMING SOON</span>
+              </div>
+              <img src="images/penne_basil.jpg" alt="バジル・リゼルバ・ペンネ" width="1200" height="1200" loading="lazy" decoding="async">
+            </div>
+            <div class="product-info">
+              <p class="product-code">PENNE <span aria-hidden="true">／</span> 01</p>
+              <h4>バジル・リゼルバ・ペンネ</h4>
+              
+            </div>
+          </article>
+          <article class="product-card product-card--penne">
+            <div class="product-photo">
+              <div class="photo-fallback" aria-hidden="true">
+                <span class="placeholder-spark">✳</span>
+                <span class="placeholder-brand">MOGFUL</span>
+                <span class="placeholder-caption">PHOTO COMING SOON</span>
+              </div>
+              <img src="images/penne_tomato_cheese.jpg" alt="トマトチーズ・ペンネ" width="1200" height="1200" loading="lazy" decoding="async">
+            </div>
+            <div class="product-info">
+              <p class="product-code">PENNE <span aria-hidden="true">／</span> 02</p>
+              <h4>トマトチーズ・ペンネ</h4>
+              
+            </div>
+          </article>
+          <article class="product-card product-card--penne">
+            <div class="product-photo">
+              <div class="photo-fallback" aria-hidden="true">
+                <span class="placeholder-spark">✳</span>
+                <span class="placeholder-brand">MOGFUL</span>
+                <span class="placeholder-caption">PHOTO COMING SOON</span>
+              </div>
+              <img src="images/penne_tarako.jpg" alt="タラコ・ロザート・ペンネ" width="1200" height="1200" loading="lazy" decoding="async">
+            </div>
+            <div class="product-info">
+              <p class="product-code">PENNE <span aria-hidden="true">／</span> 03</p>
+              <h4>タラコ・ロザート・ペンネ</h4>
+              
+            </div>
+          </article>
+          <article class="product-card product-card--penne">
+            <div class="product-photo">
+              <div class="photo-fallback" aria-hidden="true">
+                <span class="placeholder-spark">✳</span>
+                <span class="placeholder-brand">MOGFUL</span>
+                <span class="placeholder-caption">PHOTO COMING SOON</span>
+              </div>
+              <img src="images/penne_tuna_corn.jpg" alt="ツナマヨコーン・ペンネ" width="1200" height="1200" loading="lazy" decoding="async">
+            </div>
+            <div class="product-info">
+              <p class="product-code">PENNE <span aria-hidden="true">／</span> 04</p>
+              <h4>ツナマヨコーン・ペンネ</h4>
+              
+            </div>
+          </article>
+          <article class="product-card product-card--penne">
+            <div class="product-photo">
+              <div class="photo-fallback" aria-hidden="true">
+                <span class="placeholder-spark">✳</span>
+                <span class="placeholder-brand">MOGFUL</span>
+                <span class="placeholder-caption">PHOTO COMING SOON</span>
+              </div>
+              <img src="images/penne_carbonara.jpg" alt="カルボナーラ・ペンネ" width="1200" height="1200" loading="lazy" decoding="async">
+            </div>
+            <div class="product-info">
+              <p class="product-code">PENNE <span aria-hidden="true">／</span> 05</p>
+              <h4>カルボナーラ・ペンネ</h4>
+              
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="soup" class="menu-category menu-category--soup" aria-labelledby="category-soup">
+        <div class="category-heading">
+          <span class="category-number" aria-hidden="true">02</span>
+          <div class="category-names">
+            <p class="category-en">SOUP</p>
+            <h3 id="category-soup">スープ</h3>
+          </div>
+          <span class="category-count">03 ITEMS</span>
+        </div>
+        <div class="product-grid">
+          <article class="product-card product-card--soup">
+            <div class="product-photo">
+              <div class="photo-fallback" aria-hidden="true">
+                <span class="placeholder-spark">✳</span>
+                <span class="placeholder-brand">MOGFUL</span>
+                <span class="placeholder-caption">PHOTO COMING SOON</span>
+              </div>
+              <img src="images/soup_minestrone.jpg" alt="ミネストローネ" width="1200" height="1200" loading="lazy" decoding="async">
+            </div>
+            <div class="product-info">
+              <p class="product-code">SOUP <span aria-hidden="true">／</span> 01</p>
+              <h4>ミネストローネ</h4>
+              
+            </div>
+          </article>
+          <article class="product-card product-card--soup">
+            <div class="product-photo">
+              <div class="photo-fallback" aria-hidden="true">
+                <span class="placeholder-spark">✳</span>
+                <span class="placeholder-brand">MOGFUL</span>
+                <span class="placeholder-caption">PHOTO COMING SOON</span>
+              </div>
+              <img src="images/soup_pumpkin.jpg" alt="かぼちゃポタージュ" width="1200" height="1200" loading="lazy" decoding="async">
+            </div>
+            <div class="product-info">
+              <p class="product-code">SOUP <span aria-hidden="true">／</span> 02</p>
+              <h4>かぼちゃポタージュ</h4>
+              
+            </div>
+          </article>
+          <article class="product-card product-card--soup">
+            <div class="product-photo">
+              <div class="photo-fallback" aria-hidden="true">
+                <span class="placeholder-spark">✳</span>
+                <span class="placeholder-brand">MOGFUL</span>
+                <span class="placeholder-caption">PHOTO COMING SOON</span>
+              </div>
+              <img src="images/soup_clam_chowder.jpg" alt="クラムチャウダー" width="1200" height="1200" loading="lazy" decoding="async">
+            </div>
+            <div class="product-info">
+              <p class="product-code">SOUP <span aria-hidden="true">／</span> 03</p>
+              <h4>クラムチャウダー</h4>
+              
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="potato" class="menu-category menu-category--potato" aria-labelledby="category-potato">
+        <div class="category-heading">
+          <span class="category-number" aria-hidden="true">03</span>
+          <div class="category-names">
+            <p class="category-en">POTATO</p>
+            <h3 id="category-potato">ポテト</h3>
+          </div>
+          <span class="category-count">01 ITEMS</span>
+        </div>
+        <div class="product-grid product-grid--single">
+          <article class="product-card product-card--potato">
+            <div class="product-photo">
+              <div class="photo-fallback" aria-hidden="true">
+                <span class="placeholder-spark">✳</span>
+                <span class="placeholder-brand">MOGFUL</span>
+                <span class="placeholder-caption">PHOTO COMING SOON</span>
+              </div>
+              <img src="images/potato_fried.jpg" alt="フライドポテト" width="1200" height="1200" loading="lazy" decoding="async">
+            </div>
+            <div class="product-info">
+              <p class="product-code">POTATO <span aria-hidden="true">／</span> 01</p>
+              <h4>フライドポテト</h4>
+              
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="drink" class="menu-category menu-category--drink" aria-labelledby="category-drink">
+        <div class="category-heading">
+          <span class="category-number" aria-hidden="true">04</span>
+          <div class="category-names">
+            <p class="category-en">CRAFT DRINKS</p>
+            <h3 id="category-drink">創作ドリンク</h3>
+          </div>
+          <span class="category-count">04 ITEMS</span>
+        </div>
+        <div class="product-grid product-grid--four">
+          <article class="product-card product-card--drink">
+            <div class="product-photo">
+              <div class="photo-fallback" aria-hidden="true">
+                <span class="placeholder-spark">✳</span>
+                <span class="placeholder-brand">MOGFUL</span>
+                <span class="placeholder-caption">PHOTO COMING SOON</span>
+              </div>
+              <img src="images/drink_berry_soda.jpg" alt="夏色ベリーソーダ" width="1200" height="1200" loading="lazy" decoding="async">
+            </div>
+            <div class="product-info">
+              <p class="product-code">CRAFT DRINKS <span aria-hidden="true">／</span> 01</p>
+              <h4>夏色ベリーソーダ</h4>
+              
+            </div>
+          </article>
+          <article class="product-card product-card--drink">
+            <div class="product-photo">
+              <div class="photo-fallback" aria-hidden="true">
+                <span class="placeholder-spark">✳</span>
+                <span class="placeholder-brand">MOGFUL</span>
+                <span class="placeholder-caption">PHOTO COMING SOON</span>
+              </div>
+              <img src="images/drink_pineapple.jpg" alt="南風パインスカッシュ" width="1200" height="1200" loading="lazy" decoding="async">
+            </div>
+            <div class="product-info">
+              <p class="product-code">CRAFT DRINKS <span aria-hidden="true">／</span> 02</p>
+              <h4>南風パインスカッシュ</h4>
+              
+            </div>
+          </article>
+          <article class="product-card product-card--drink">
+            <div class="product-photo">
+              <div class="photo-fallback" aria-hidden="true">
+                <span class="placeholder-spark">✳</span>
+                <span class="placeholder-brand">MOGFUL</span>
+                <span class="placeholder-caption">PHOTO COMING SOON</span>
+              </div>
+              <img src="images/drink_mango.jpg" alt="真夏のマンゴースパーク" width="1200" height="1200" loading="lazy" decoding="async">
+            </div>
+            <div class="product-info">
+              <p class="product-code">CRAFT DRINKS <span aria-hidden="true">／</span> 03</p>
+              <h4>真夏のマンゴースパーク</h4>
+              
+            </div>
+          </article>
+          <article class="product-card product-card--drink">
+            <div class="product-photo">
+              <div class="photo-fallback" aria-hidden="true">
+                <span class="placeholder-spark">✳</span>
+                <span class="placeholder-brand">MOGFUL</span>
+                <span class="placeholder-caption">PHOTO COMING SOON</span>
+              </div>
+              <img src="images/drink_lemonade.jpg" alt="陽だまりレモネード" width="1200" height="1200" loading="lazy" decoding="async">
+            </div>
+            <div class="product-info">
+              <p class="product-code">CRAFT DRINKS <span aria-hidden="true">／</span> 04</p>
+              <h4>陽だまりレモネード</h4>
+              
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="alcohol" class="menu-category menu-category--alcohol" aria-labelledby="category-alcohol">
+        <div class="category-heading">
+          <span class="category-number" aria-hidden="true">05</span>
+          <div class="category-names">
+            <p class="category-en">CRAFT COCKTAILS</p>
+            <h3 id="category-alcohol">創作ドリンク（アルコール）</h3>
+          </div>
+          <span class="category-count">02 ITEMS</span>
+        </div>
+        <div class="product-grid">
+          <article class="product-card product-card--alcohol">
+            <div class="product-photo">
+              <div class="photo-fallback" aria-hidden="true">
+                <span class="placeholder-spark">✳</span>
+                <span class="placeholder-brand">MOGFUL</span>
+                <span class="placeholder-caption">PHOTO COMING SOON</span>
+              </div>
+              <img src="images/drink_orange_sangria.jpg" alt="黄昏オレンジ・サングリア" width="1200" height="1200" loading="lazy" decoding="async">
+            </div>
+            <div class="product-info">
+              <p class="product-code">CRAFT COCKTAILS <span aria-hidden="true">／</span> 01</p>
+              <h4>黄昏オレンジ・サングリア</h4>
+              <p class="alcohol-note">アルコール入り</p>
+            </div>
+          </article>
+          <article class="product-card product-card--alcohol">
+            <div class="product-photo">
+              <div class="photo-fallback" aria-hidden="true">
+                <span class="placeholder-spark">✳</span>
+                <span class="placeholder-brand">MOGFUL</span>
+                <span class="placeholder-caption">PHOTO COMING SOON</span>
+              </div>
+              <img src="images/drink_citrus_sangria.jpg" alt="秋風シトラス・サングリア" width="1200" height="1200" loading="lazy" decoding="async">
+            </div>
+            <div class="product-info">
+              <p class="product-code">CRAFT COCKTAILS <span aria-hidden="true">／</span> 02</p>
+              <h4>秋風シトラス・サングリア</h4>
+              <p class="alcohol-note">アルコール入り</p>
+            </div>
+          </article>
+        </div>
+        <p class="alcohol-disclaimer">※ お酒は20歳になってから。</p>
+      </section>
+      <p class="menu-endnote">※ メニュー・販売内容は出店先により異なる場合があります。</p>
     </section>
 
-    <section id="news" class="container">
+    <section id="news" class="container info-section">
       <h2 class="section-title">お知らせ</h2>
       <ul class="news-list">
-        <li><span class="date">2026.07.14</span> 8/1(土)に松戸花火大会 出店決定しました</li>
-        <li><span class="date">2026.06.06</span> 7/5(日)に味の素スタジアム BIGフリマ 出店決定しました</li>
-        <li><span class="date">2026.05.23</span> GIRLS EDITION -IDOL LIVE- に出店しました</li>
+        <li><span class="date">2026.07.14</span><span>8/1(土)に松戸花火大会 出店決定しました</span></li>
+        <li><span class="date">2026.06.06</span><span>7/5(日)に味の素スタジアム BIGフリマ 出店決定しました</span></li>
+        <li><span class="date">2026.05.23</span><span>GIRLS EDITION -IDOL LIVE- に出店しました</span></li>
       </ul>
     </section>
 
     <section id="schedule" class="container highlight">
       <h2 class="section-title">直近の出店スケジュール</h2>
       <div class="schedule-card">
-        <p class="next-date">次回出店：<strong>2026年10月31日(土)~2026年11月3日(火)</strong></p>
+        <p class="next-label">NEXT POP-UP</p>
+        <p class="next-date">次回出店：<strong>2026年10月31日(土)〜11月3日(火)</strong></p>
         <p class="location">場所：三井アウトレットパーク 多摩南大沢</p>
         <p class="time">時間：11:00 〜 20:00</p>
       </div>
     </section>
 
-    <section id="history" class="container">
+    <section id="history" class="container info-section">
       <h2 class="section-title">出店歴</h2>
       <ul class="history-list">
         <li>松戸花火大会 出店</li>
-        <li>GIRLS EDITION -IDOL LIVE- </li>
-        <li>味の素スタジアムBIGフリマ出店</li>
+        <li>GIRLS EDITION -IDOL LIVE-</li>
+        <li>味の素スタジアム BIGフリマ 出店</li>
         <li>下北にて'25 出店</li>
         <li>Re:Music Camp Fes 出店</li>
         <li>など多数</li>
       </ul>
     </section>
 
-    <section id="sns" class="container">
+    <section id="sns" class="container sns-section">
       <h2 class="section-title">FOLLOW US</h2>
+      <p>最新の出店情報はInstagramから！</p>
       <div class="sns-icons">
-        <a href="https://www.instagram.com/mogful_foodtruck/" class="sns-link" target="_blank"
-          rel="noopener noreferrer" aria-label="MOGFULのInstagram">
+        <a href="https://www.instagram.com/mogful_foodtruck/" class="sns-link" target="_blank" rel="noopener noreferrer" aria-label="MOGFULのInstagramを見る">
           <i class="fab fa-instagram" aria-hidden="true"></i>
         </a>
       </div>
@@ -140,8 +399,9 @@
   </main>
 
   <footer>
+    <p class="footer-brand">MOGFUL<span>.</span></p>
     <p>&copy; 2026 MOGFUL. All Rights Reserved.</p>
   </footer>
-  <script src="script.js"></script>
+  <script src="script.js?v=20261023-photo-menu" defer></script>
 </body>
 </html>
