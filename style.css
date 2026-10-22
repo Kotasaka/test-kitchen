@@ -196,17 +196,16 @@
     align-items: center;
     gap: 1.5rem;
     padding: 1.2rem 1.8rem;
-    background-color: #fff;
-    border: 2px solid #e67e22;
+    background-color: #fff8f0;
     border-radius: 14px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
     color: #333;
     text-decoration: none;
     transition: box-shadow 0.3s;
   }
   
   .next-bar:hover {
-    box-shadow: 0 6px 20px rgba(230, 126, 34, 0.35);
+    box-shadow: 0 8px 28px rgba(230, 126, 34, 0.4);
   }
   
   .next-label {
