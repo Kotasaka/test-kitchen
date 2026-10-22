@@ -189,12 +189,15 @@
     margin: -2.2rem auto 0;
     padding: 0 1.5rem;
     scroll-margin-top: 100px;
+    display: flex;
+    justify-content: center;
   }
   
   .next-bar {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    max-width: 100%;
     padding: 1.2rem 1.8rem;
     background-color: #fff8f0;
     border-radius: 14px;
@@ -222,7 +225,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.2rem 1.5rem;
-    flex: 1;
     font-size: 0.95rem;
   }
   
@@ -524,8 +526,12 @@
       padding: 0 1rem;
     }
     .next-bar {
+      width: 100%;
       padding: 1rem 1.2rem;
       gap: 1rem;
+    }
+    .next-info {
+      flex: 1;
     }
     .next-label {
       padding: 0.25rem 0.7rem;
